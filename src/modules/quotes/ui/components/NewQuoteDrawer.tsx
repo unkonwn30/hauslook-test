@@ -43,7 +43,7 @@ export function NewQuoteDrawer({ onCreated }: { onCreated?: () => void }) {
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
-        <Button className="bg-indigo-600 hover:bg-indigo-700">
+        <Button className="bg-black/85 hover:bg-black/95 text-white">
           {t("newQuote")}
         </Button>
       </SheetTrigger>
@@ -73,7 +73,7 @@ export function NewQuoteDrawer({ onCreated }: { onCreated?: () => void }) {
           {error && <div className="text-sm text-red-600">{error}</div>}
 
           <Button
-            className="w-full bg-indigo-600 hover:bg-indigo-700"
+            className="w-full bg-bg-black/85 hover:bg-bg-black/95"
             disabled={!customerId || loading}
             onClick={create}
           >

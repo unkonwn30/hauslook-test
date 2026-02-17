@@ -1,7 +1,9 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
-const resources = {
+export const STORAGE_LANG_KEY = "lang";
+
+export const resources = {
   es: {
     translation: {
       quotes: "Presupuestos",
@@ -35,20 +37,26 @@ const resources = {
       status: "Estat",
     },
   },
-};
+} as const;
 
-const saved = localStorage.getItem("lang") as keyof typeof resources | null;
+export type Lang = keyof typeof resources;
+
+function getInitialLang(): Lang {
+  const saved = localStorage.getItem(STORAGE_LANG_KEY) as Lang | null;
+  if (saved && saved in resources) return saved;
+  return "es";
+}
 
 i18n.use(initReactI18next).init({
   resources,
-  lng: saved ?? "es",
+  lng: getInitialLang(),
   fallbackLng: "es",
   interpolation: { escapeValue: false },
 });
 
-export function setLang(lang: keyof typeof resources) {
-  localStorage.setItem("lang", lang);
-  i18n.changeLanguage(lang);
+export async function setLang(lang: Lang) {
+  localStorage.setItem(STORAGE_LANG_KEY, lang);
+  await i18n.changeLanguage(lang);
 }
 
 export default i18n;

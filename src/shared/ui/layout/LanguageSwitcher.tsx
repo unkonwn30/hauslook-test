@@ -18,10 +18,28 @@ export function LanguageSwitcher() {
           {i18n.language.toUpperCase()}
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setLang("es")}>ES</DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setLang("gl")}>GL</DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setLang("ca")}>CA</DropdownMenuItem>
+      <DropdownMenuContent
+        align="end"
+        className="bg-black text-white cursor-pointer flex flex-col "
+      >
+        <DropdownMenuItem
+          onClick={() => setLang("es")}
+          className="hover:bg-black/75"
+        >
+          ES
+        </DropdownMenuItem>
+        <DropdownMenuItem
+          onClick={() => setLang("gl")}
+          className="hover:bg-black/75"
+        >
+          GL
+        </DropdownMenuItem>
+        <DropdownMenuItem
+          onClick={() => setLang("ca")}
+          className="hover:bg-black/75"
+        >
+          CA
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );

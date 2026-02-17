@@ -100,7 +100,7 @@ export function QuotesListPage() {
                 <tr key={q.id} className="border-b hover:bg-neutral-50">
                   <td className="px-4 py-3">
                     <Link
-                      className="text-indigo-600 hover:underline"
+                      className="text-lime-700 hover:underline"
                       to={`/quotes/${q.id}`}
                     >
                       {q.id.slice(0, 8)}

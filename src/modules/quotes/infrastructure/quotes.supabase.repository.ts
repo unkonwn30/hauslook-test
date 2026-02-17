@@ -1,27 +1,7 @@
 import { supabase } from "../../../shared/supabase/supabaseClient";
-import type { Quote } from "../domain/quote";
-import type { QuoteLine } from "../domain/quoteLine";
+import type { Quote, QuoteRow } from "../domain/quote";
+import type { QuoteLine, QuoteLineRow } from "../domain/quoteLine";
 import type { QuoteStatus } from "../domain/quoteStatus";
-
-type QuoteRow = {
-  id: string;
-  customer_id: string;
-  status: QuoteStatus;
-  vat_rate: number;
-  subtotal: number;
-  vat_amount: number;
-  total: number;
-  created_at: string;
-};
-
-type QuoteLineRow = {
-  id: string;
-  quote_id: string;
-  product_id: string;
-  quantity: number;
-  unit_price: number;
-  line_total: number;
-};
 
 const toQuote = (r: QuoteRow): Quote => ({
   ...r,

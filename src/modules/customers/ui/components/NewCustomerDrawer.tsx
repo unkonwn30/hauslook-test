@@ -37,7 +37,7 @@ export function NewCustomerDrawer({ onCreated }: { onCreated?: () => void }) {
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
-        <Button className="bg-indigo-600 hover:bg-indigo-700">
+        <Button className="bg-black/75 text-white hover:bg-black/95">
           Nuevo cliente
         </Button>
       </SheetTrigger>
