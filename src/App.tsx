@@ -1,21 +1,9 @@
 import { Navigate, Route, Routes } from "react-router-dom";
+import { CustomersPage } from "./modules/customers/ui/pages/CustomersPage";
+import { ProductsPage } from "./modules/products/ui/pages/ProductsPage";
 import { QuoteEditorPage } from "./modules/quotes/ui/pages/QuoteEditor";
 import { QuotesListPage } from "./modules/quotes/ui/pages/QuotesListPage";
 import { AppLayout } from "./shared/ui/layout/AppLayout";
-
-function CustomersPage() {
-  return (
-    <div className="rounded-md border bg-white p-4">Clientes (placeholder)</div>
-  );
-}
-
-function ProductsPage() {
-  return (
-    <div className="rounded-md border bg-white p-4">
-      Productos (placeholder)
-    </div>
-  );
-}
 
 export default function App() {
   return (

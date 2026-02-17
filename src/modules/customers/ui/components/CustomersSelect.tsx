@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
-import { getErrorMessage } from "../../../shared/lib/errors";
-import { ListCustomersUseCase } from "../application/listCustomers.usecase";
-import type { Customer } from "../domain/customer";
-import { CustomersSupabaseRepository } from "../infrastructure/customers.supabase.repository";
+import { getErrorMessage } from "../../../../shared/lib/errors";
+import { ListCustomersUseCase } from "../../application/listCustomers.usecase";
+import type { Customer } from "../../domain/customer";
+import { CustomersSupabaseRepository } from "../../infrastructure/customers.supabase.repository";
 
 type Props = {
   value: string | null;
